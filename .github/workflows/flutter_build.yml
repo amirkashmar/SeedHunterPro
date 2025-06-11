@@ -13,7 +13,7 @@ on:
                                                   uses: subosito/flutter-action@v2
                                                           with:
                                                                     flutter-version: "3.13.9"
-                                                                              channel: "stable"
+                                                                              channel: "stable"  # اضافه کردن این خط
                                                                                     - name: Install dependencies
                                                                                             run: flutter pub get
                                                                                                   - name: Build APKs
