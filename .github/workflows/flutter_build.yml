@@ -1,23 +1,29 @@
 name: Build Flutter APKs
+
 on:
   push:
       branches:
             - main
+
             jobs:
               build:
                   runs-on: ubuntu-latest
                       steps:
                             - name: Checkout repository
                                     uses: actions/checkout@v4
+
                                           - name: Set up Flutter
                                                   uses: subosito/flutter-action@v2
                                                           with:
                                                                     flutter-version: "3.13.9"
-                                                                              channel: "stable"  # اضافه کردن این خط
+                                                                              channel: "stable"  # اضافه کردن کانال پایدار
+
                                                                                     - name: Install dependencies
                                                                                             run: flutter pub get
+
                                                                                                   - name: Build APKs
                                                                                                           run: flutter build apk --release
+
                                                                                                                 - name: Upload APKs
                                                                                                                         uses: actions/upload-artifact@v4
                                                                                                                                 with:
